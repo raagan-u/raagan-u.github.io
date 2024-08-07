@@ -1,0 +1,74 @@
+<html>
+	<head>
+		<title>Raagan U</title>
+		<link href="./stylesheet.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
+	</head>
+	<body>
+		<div class="centered">
+			<span class="name-title">Raagan U</span><br>
+			<span class="caption">Engineering Student..running <s>behind</s> with life and tech</span>
+		</div>
+		<div class="dock">
+			<div class="dock-container">
+			  <li class="li-1">
+				<div class="name">About</div>
+				<i class="fa-duotone fa-solid fa-circle-info" alt=""></i>
+			  </li>
+			  <li class="li-2">
+				<div class="name">Skills & Achievements</div>
+				<i class="fa-solid fa-trophy"></i>
+			  </li>
+			  <li class="li-3">
+				<div class="name">Home</div>
+				<i class="fa-solid fa-house"></i>
+			  </li>
+			  <li class="li-4">
+				<div class="name">Projects & Skills</div>
+				<i class="fa-solid fa-layer-group"></i>
+			  </li>
+			  <li class="li-bin li-5">
+				<div class="name">Contact</div>
+				<i class="fa-solid fa-phone"></i>
+			  </li>
+			</div>
+		  </div>
+	</body>
+	<script>
+		let icons = document.querySelectorAll(".ico");
+let length = icons.length;
+
+icons.forEach((item, index) => {
+  item.addEventListener("mouseover", (e) => {
+    focus(e.target, index);
+  });
+  item.addEventListener("mouseleave", (e) => {
+    icons.forEach((item) => {
+      item.style.transform = "scale(1) translateY(0px)";
+    });
+  });
+});
+
+const focus = (elem, index) => {
+  let previous = index - 1;
+  let next = index + 1;
+
+  if (previous < 0) {
+    console.log("first element");
+    elem.style.transform = "scale(1.5) translateY(-10px)";
+  } else if (next >= icons.length) {
+    elem.style.transform = "scale(1.5) translateY(-10px)";
+    console.log("last element");
+  } else {
+    elem.style.transform = "scale(1.5) translateY(-10px)";
+    if (previous >= 0) {
+      icons[previous].style.transform = "scale(1.2) translateY(-6px)";
+    }
+    if (next < icons.length) {
+      icons[next].style.transform = "scale(1.2) translateY(-6px)";
+    }
+  }
+};
+	</script>
+</html>
+
