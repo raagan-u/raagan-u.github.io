@@ -1,12 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Vujahday+Script&display=swap');
 
+.page {
+	display: none;
+}
+.page.active {
+	display: block;
+}
+
+.icn-link {
+	color: black;
+}
 .centered {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+}	
+
+.slide-title {
+	font-size: 40px;
+	font-weight: bold;
 }
-  
 .name-title {
 	font-size: 200px;
 	font-family: "Vujahday Script", cursive;
@@ -16,7 +30,7 @@
 }
 
 .caption {
-	font-size: 80px;
+	font-size: 60px;
 	font-family: "Vujahday Script", cursive;
 	font-weight: 400;
 	font-style: normal;
@@ -127,4 +141,24 @@
 	background: rgba(255, 255, 255, 0.5);
 	content: "";
 	bottom: 2px;
+  }
+ 
+  .contact-section {
+	text-align: center;
+  }
+  
+  .contact-header {
+	font-size: 24px;
+	margin-bottom: 20px;
+  }
+  
+  .icon-container {
+	display: flex;
+	justify-content: center;
+  }
+  
+  .icon-link {
+	margin: 0 10px; /* Adjust spacing between icons */
+	font-size: 24px;
+	color: black;
   }

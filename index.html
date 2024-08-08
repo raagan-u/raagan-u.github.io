@@ -5,31 +5,52 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
 	</head>
 	<body>
-		<div class="centered">
-			<span class="name-title">Raagan U</span><br>
-			<span class="caption">Engineering Student..running <s>behind</s> with life and tech</span>
+		<div class="page" id="home">
+				<div class="centered">
+				<span class="name-title">Raagan U</span><br>
+				<span class="caption">Engineering Student..running <s>behind</s> with life and tech.</span>
+			</div>
 		</div>
+		<div class="page" id="about">
+			<span class="slide-title">About Me</span><br>
+			<span class="aboutt">I'm a Computer Science Engineering student at Jain University with a focus on backend development. My core competencies lie in web development and cloud technologies, and I'm eager to delve deeper into the cloud development domain. I'm driven by a passion for creating functional and efficient systems. With a strong foundation in problem-solving and a collaborative spirit, I'm excited to contribute to innovative projects.</span>
+		</div>
+		<div class="page" id="achievements">
+			<h1>awards</h1>
+		</div>
+		<div class="page" id="projects">
+			<h1>proj</h1>
+		</div>
+		<div class="page contact-section" id="contact">
+			<h2 class="contact-header">Get In Touch</h2>
+			<div class="icon-container">
+			  <a href="#" class="icon-link"><i class="fa-solid fa-envelope"></i></a>
+			  <a href="#" class="icon-link"><i class="fa-solid fa-phone"></i></a>
+			  <a href="#" class="icon-link"><i class="fa-brands fa-linkedin"></i></a>
+			  <a href="#" class="icon-link"><i class="fa-brands fa-instagram"></i></a>
+			</div>
+		  </div>		  
 		<div class="dock">
 			<div class="dock-container">
-			  <li class="li-1">
+			  <li class="li-1 about-icon">
 				<div class="name">About</div>
-				<i class="fa-duotone fa-solid fa-circle-info" alt=""></i>
+				<a href="#about" class="icn-link"><i class="fa-solid fa-circle-info" alt=""></i></a>
 			  </li>
 			  <li class="li-2">
-				<div class="name">Skills & Achievements</div>
-				<i class="fa-solid fa-trophy"></i>
+				<div class="name">Achievements</div>
+				<a href="#achievements" class="icn-link"><i class="fa-solid fa-trophy"></i></a>
 			  </li>
 			  <li class="li-3">
 				<div class="name">Home</div>
-				<i class="fa-solid fa-house"></i>
+				<a href="#home" class="icn-link"><i class="fa-solid fa-house"></i></a>
 			  </li>
 			  <li class="li-4">
 				<div class="name">Projects & Skills</div>
-				<i class="fa-solid fa-layer-group"></i>
+				<a href="#projects" class="icn-link"><i class="fa-solid fa-layer-group"></i></a>
 			  </li>
 			  <li class="li-bin li-5">
 				<div class="name">Contact</div>
-				<i class="fa-solid fa-phone"></i>
+				<a href="#contact" class="icn-link"><i class="fa-solid fa-phone"></i></a>
 			  </li>
 			</div>
 		  </div>
@@ -69,6 +90,47 @@ const focus = (elem, index) => {
     }
   }
 };
+const pages = document.querySelectorAll('.page');
+    const navLinks = document.querySelectorAll('a[href^="#"]');
+
+    navLinks.forEach((link) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const hash = link.getAttribute('href');
+        const pageId = hash.substring(1); // Remove the '#' character
+        const page = document.getElementById(pageId);
+
+        // Hide all pages and show the selected one
+        pages.forEach((page) => {
+          page.classList.remove('active');
+        });
+        page.classList.add('active');
+      });
+    });
+	const text = document.querySelector('.aboutt');
+const textContent = 'I\'m a Computer Science Engineering student at Jain University with a focus on backend development. My core competencies lie in web development and cloud technologies, and I\'m eager to delve deeper into the cloud development domain. I\'m driven by a passion for creating functional and efficient systems. With a strong foundation in problem-solving and a collaborative spirit, I\'m excited to contribute to innovative projects.';
+text.textContent = '';
+
+const aboutPageIcon = document.querySelector('.about-icon');
+
+let index = 0;
+let speed = 100;
+
+function type() {
+  if (index < textContent.length) {
+    text.textContent += textContent.charAt(index);
+    index++;
+    setTimeout(type, speed);
+  } else {
+    // Add a blinking cursor here (optional)
+  }
+}
+
+aboutPageIcon.addEventListener('click', () => {
+  text.textContent = '';
+  index = 0;
+  type();
+});
 	</script>
 </html>
 
