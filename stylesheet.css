@@ -18,7 +18,7 @@
 }	
 
 .slide-title {
-	font-size: 40px;
+	font-size: 75px;
 	font-weight: bold;
 }
 .name-title {
@@ -148,17 +148,191 @@
   }
   
   .contact-header {
-	font-size: 24px;
+	font-size: 100px;
 	margin-bottom: 20px;
   }
   
   .icon-container {
 	display: flex;
-	justify-content: center;
+	justify-content: space-evenly;
+	align-items: center;
   }
   
   .icon-link {
 	margin: 0 10px; /* Adjust spacing between icons */
-	font-size: 24px;
+	font-size: 100px;
 	color: black;
   }
+
+  .aboutt {
+	font-size: 40px;
+  }
+
+
+.about-wikipedia {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 200px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+    border-radius: 10px;
+}
+
+.sidebar h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 8px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #0645AD;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+}
+
+/* Infobox */
+.infobox {
+    float: right;
+    width: 250px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.infobox h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.infobox img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.infobox p {
+    margin: 8px 0;
+    font-size: 0.9em;
+}
+
+.infobox a {
+    color: #0645AD;
+    text-decoration: none;
+}
+
+.infobox a:hover {
+    text-decoration: underline;
+}
+
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Achievements Section */
+#achievements {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    letter-spacing: 2px;
+}
+
+/* Achievements Slider */
+.achievements-slider {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.achievement-slide {
+    width: 150px;
+    height: 150px;
+    background-color: #555;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.achievement-slide:hover {
+    transform: scale(1.1);
+    background-color: #DAA520; /* Gold on hover */
+}
+
+/* Achievement Card */
+.achievement-card {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    z-index: 1000;
+    text-align: left;
+}
+
+.achievement-card .card-title {
+    font-size: 1.8em;
+    margin: 0 0 10px;
+    color: #333;
+    border-bottom: 2px solid #DAA520;
+    padding-bottom: 5px;
+}
+
+.achievement-card .card-details {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Hide Card on Mouse Leave */
+.achievement-slide:hover ~ .achievement-card {
+    display: block;
+}

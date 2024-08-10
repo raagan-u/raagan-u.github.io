@@ -5,37 +5,78 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
 	</head>
 	<body>
-		<div class="page" id="home">
+		<div class="page active" id="home">
 				<div class="centered">
 				<span class="name-title">Raagan U</span><br>
-				<span class="caption">Engineering Student..running <s>behind</s> with life and tech.</span>
+				<span class="caption">Engineering Student <u>(Backend Dev)</u>..running <s>behind</s> with life and tech.</span>
 			</div>
 		</div>
-		<div class="page" id="about">
-			<span class="slide-title">About Me</span><br>
-			<span class="aboutt">I'm a Computer Science Engineering student at Jain University with a focus on backend development. My core competencies lie in web development and cloud technologies, and I'm eager to delve deeper into the cloud development domain. I'm driven by a passion for creating functional and efficient systems. With a strong foundation in problem-solving and a collaborative spirit, I'm excited to contribute to innovative projects.</span>
-		</div>
 		<div class="page" id="achievements">
-			<h1>awards</h1>
-		</div>
+			<h1>Achievements</h1>
+			<div class="achievements-slider">
+				<div class="achievement-slide" data-title="Achievement 1" data-details="Details about Achievement 1. Date, description, etc.">djk</div>
+				<div class="achievement-slide" data-title="Achievement 2" data-details="Details about Achievement 2. Date, description, etc."></div>
+				<div class="achievement-slide" data-title="Achievement 3" data-details="Details about Achievement 3. Date, description, etc."></div>
+			</div>
+			<div class="achievement-card" id="achievementCard">
+				<h2 class="card-title"></h2>
+				<p class="card-details"></p>
+			</div>
+		</div>		
 		<div class="page" id="projects">
 			<h1>proj</h1>
 		</div>
 		<div class="page contact-section" id="contact">
-			<h2 class="contact-header">Get In Touch</h2>
-			<div class="icon-container">
-			  <a href="#" class="icon-link"><i class="fa-solid fa-envelope"></i></a>
-			  <a href="#" class="icon-link"><i class="fa-solid fa-phone"></i></a>
-			  <a href="#" class="icon-link"><i class="fa-brands fa-linkedin"></i></a>
-			  <a href="#" class="icon-link"><i class="fa-brands fa-instagram"></i></a>
+			<span class="slide-title">About Me</span><br>
+			<div class="about-wikipedia">
+				<!-- Sidebar Navigation -->
+				<div class="sidebar">
+					<h2>Contents</h2>
+					<ul>
+						<li><a href="#intro">Introduction</a></li>
+						<li><a href="#early-life">Early Life</a></li>
+						<li><a href="#education">Education</a></li>
+						<li><a href="#personal-life">Personal Life</a></li>
+					</ul>
+				</div>
+	
+				<!-- Main Content -->
+				<div class="main-content">
+					<!-- Infobox -->
+					<div class="infobox">
+						<h2>Raagan U</h2>
+						<img src="your-image.jpg" alt="Your Image">
+						<p><strong>Born:</strong> April 1st, 2003<br>Erode, Tamil Nadu</p>
+						<p><strong>Occupation:</strong> Engineering Student, Backend Developer</p>
+						<p><strong>Education:</strong> Jain University</p>
+						<p><strong>Website:</strong> <a href="#"></a></p>
+					</div>
+	
+					<!-- Sections -->
+					<div id="intro">
+						<h2>Introduction</h2>
+						<p>Your introduction goes here. A brief overview of who you are and what you do.</p>
+					</div>
+	
+					<div id="early-life">
+						<h2>Early Life</h2>
+						<p>Details about your early life, background, etc.</p>
+					</div>
+	
+					<div id="education">
+						<h2>Education</h2>
+						<p>Details about your education, degrees, and achievements in academia.</p>
+					</div>
+	
+					<div id="personal-life">
+						<h2>Personal Life</h2>
+						<p>Information about your hobbies, interests, and anything else you'd like to share.</p>
+					</div>
+				</div>
 			</div>
 		  </div>		  
 		<div class="dock">
 			<div class="dock-container">
-			  <li class="li-1 about-icon">
-				<div class="name">About</div>
-				<a href="#about" class="icn-link"><i class="fa-solid fa-circle-info" alt=""></i></a>
-			  </li>
 			  <li class="li-2">
 				<div class="name">Achievements</div>
 				<a href="#achievements" class="icn-link"><i class="fa-solid fa-trophy"></i></a>
@@ -48,9 +89,9 @@
 				<div class="name">Projects & Skills</div>
 				<a href="#projects" class="icn-link"><i class="fa-solid fa-layer-group"></i></a>
 			  </li>
-			  <li class="li-bin li-5">
-				<div class="name">Contact</div>
-				<a href="#contact" class="icn-link"><i class="fa-solid fa-phone"></i></a>
+			  <li class="li-bin li-5 about-icon">
+				<div class="name">About</div>
+				<a href="#contact" class="icn-link"><i class="fa-solid fa-circle-info"></i></a>
 			  </li>
 			</div>
 		  </div>
@@ -107,30 +148,27 @@ const pages = document.querySelectorAll('.page');
         page.classList.add('active');
       });
     });
-	const text = document.querySelector('.aboutt');
-const textContent = 'I\'m a Computer Science Engineering student at Jain University with a focus on backend development. My core competencies lie in web development and cloud technologies, and I\'m eager to delve deeper into the cloud development domain. I\'m driven by a passion for creating functional and efficient systems. With a strong foundation in problem-solving and a collaborative spirit, I\'m excited to contribute to innovative projects.';
-text.textContent = '';
 
-const aboutPageIcon = document.querySelector('.about-icon');
+document.querySelectorAll('.achievement-slide').forEach(slide => {
+    slide.addEventListener('mouseover', function() {
+        const card = document.getElementById('achievementCard');
+        const title = this.getAttribute('data-title');
+        const details = this.getAttribute('data-details');
+		
 
-let index = 0;
-let speed = 100;
+        card.querySelector('.card-title').textContent = title;
+        card.querySelector('.card-details').textContent = details;
 
-function type() {
-  if (index < textContent.length) {
-    text.textContent += textContent.charAt(index);
-    index++;
-    setTimeout(type, speed);
-  } else {
-    // Add a blinking cursor here (optional)
-  }
-}
+        card.style.display = 'block';
+		console.log("tesing");
+    });
 
-aboutPageIcon.addEventListener('click', () => {
-  text.textContent = '';
-  index = 0;
-  type();
+    slide.addEventListener('mouseleave', function() {
+        const card = document.getElementById('achievementCard');
+        card.style.display = 'none';
+    });
 });
+
 	</script>
 </html>
 
