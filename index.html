@@ -28,21 +28,36 @@
 			</div>
 		</div>		
 		<div class="page" id="projects">
-			<h1>SKILLS AND PROJECT</h1>
-			<h1>THIS SECTION IS STILL UNDER PROGRESS..!</h1>
-			<div>
-				<span class="skills"><p>
-					Backend DevelopmentCyper Club ( Department Club )<br>
-					Full Stack Development ( MERN )Vice President<br>
-					C/C++<br>
-					Python<br>
-					GoLang<br>
-					DataBases(SQL, Mongo, Postgres)<br>
-					Linux ( Basic Bash Scripting)<br>
-					Basic AWS<br>
-				</p>
-				</span>
-			</div>
+			<h1>SKILLS AND PROJECTS</h1>
+    <		<div class="cards-container">
+        		<div class="card">
+            		<h2>Skills</h2>
+            		<p>
+						Backend Development<br>
+						Full Stack Development (MERN)<br>
+						C/C++<br>
+						Python<br>
+						GoLang<br>
+						Databases (SQL, Mongo, Postgres)<br>
+						Linux (Basic Bash Scripting)<br>
+						Basic AWS<br>
+					</p>
+        		</div>
+        		<div class="card">
+            		<h2>Projects</h2>
+            		<p>
+						Overall Fitness Journal - MERN Stack APP with JWT Auth, and Context.<br>
+						Fund Trail Analysis Tool - Blockchain based DataBase and ML Algorithms for analyzing trends.<br>
+						Reverse Budget Tracker
+					</p>
+        		</div>
+				<div class="leetcode-card">
+					<div id="leetcode-profile">
+						<h2>LeetCode Profile</h2>
+						<div id="leetcode-stats"></div>
+					</div>
+				</div>
+    		</div>
 		</div>
 		<div class="page contact-section" id="contact">
 			<span class="slide-title">About Me</span><br>
@@ -119,77 +134,88 @@
 	</body>
 	<script>
 		let icons = document.querySelectorAll(".ico");
-let length = icons.length;
+		let length = icons.length;
 
-icons.forEach((item, index) => {
-  item.addEventListener("mouseover", (e) => {
-    focus(e.target, index);
-  });
-  item.addEventListener("mouseleave", (e) => {
-    icons.forEach((item) => {
-      item.style.transform = "scale(1) translateY(0px)";
-    });
-  });
-});
+		icons.forEach((item, index) => {
+			item.addEventListener("mouseover", (e) => {
+				focus(e.target, index);
+			});
+			item.addEventListener("mouseleave", (e) => {
+				icons.forEach((item) => {
+				item.style.transform = "scale(1) translateY(0px)";
+				});
+			});
+		});
 
-const focus = (elem, index) => {
-  let previous = index - 1;
-  let next = index + 1;
+		const focus = (elem, index) => {
+			let previous = index - 1;
+			let next = index + 1;
 
-  if (previous < 0) {
-    console.log("first element");
-    elem.style.transform = "scale(1.5) translateY(-10px)";
-  } else if (next >= icons.length) {
-    elem.style.transform = "scale(1.5) translateY(-10px)";
-    console.log("last element");
-  } else {
-    elem.style.transform = "scale(1.5) translateY(-10px)";
-    if (previous >= 0) {
-      icons[previous].style.transform = "scale(1.2) translateY(-6px)";
-    }
-    if (next < icons.length) {
-      icons[next].style.transform = "scale(1.2) translateY(-6px)";
-    }
-  }
-};
-const pages = document.querySelectorAll('.page');
-    const navLinks = document.querySelectorAll('a[href^="#"]');
+			if (previous < 0) {
+				console.log("first element");
+				elem.style.transform = "scale(1.5) translateY(-10px)";
+			} else if (next >= icons.length) {
+				elem.style.transform = "scale(1.5) translateY(-10px)";
+				console.log("last element");
+			} else {
+				elem.style.transform = "scale(1.5) translateY(-10px)";
+				if (previous >= 0) {
+					icons[previous].style.transform = "scale(1.2) translateY(-6px)";
+				}
+				if (next < icons.length) {
+					icons[next].style.transform = "scale(1.2) translateY(-6px)";
+				}
+			}
+		};
+		const pages = document.querySelectorAll('.page');
+		const navLinks = document.querySelectorAll('a[href^="#"]');
 
-    navLinks.forEach((link) => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const hash = link.getAttribute('href');
-        const pageId = hash.substring(1); // Remove the '#' character
-        const page = document.getElementById(pageId);
+		navLinks.forEach((link) => {
+		link.addEventListener('click', (e) => {
+			e.preventDefault();
+			const hash = link.getAttribute('href');
+			const pageId = hash.substring(1); // Remove the '#' character
+			const page = document.getElementById(pageId);
 
-        // Hide all pages and show the selected one
-        pages.forEach((page) => {
-          page.classList.remove('active');
-        });
-        page.classList.add('active');
-      });
-    });
+			// Hide all pages and show the selected one
+			pages.forEach((page) => {
+			page.classList.remove('active');
+			});
+			page.classList.add('active');
+		});
+		});
 
-document.querySelectorAll('.achievement-slide').forEach(slide => {
-    slide.addEventListener('mouseover', function() {
-        const card = document.getElementById('achievementCard');
-        const title = this.getAttribute('data-title');
-        const details = this.getAttribute('data-details');
-		
+		document.querySelectorAll('.achievement-slide').forEach(slide => {
+			slide.addEventListener('mouseover', function() {
+				const card = document.getElementById('achievementCard');
+				const title = this.getAttribute('data-title');
+				const details = this.getAttribute('data-details');
+				
 
-        card.querySelector('.card-title').textContent = title;
-        card.querySelector('.card-details').textContent = details;
+				card.querySelector('.card-title').textContent = title;
+				card.querySelector('.card-details').textContent = details;
 
-        card.style.display = 'block';
-		console.log("tesing");
-    });
+				card.style.display = 'block';
+				console.log("tesing");
+			});
 
-    slide.addEventListener('mouseleave', function() {
-        const card = document.getElementById('achievementCard');
-        card.style.display = 'none';
-    });
-});
+			slide.addEventListener('mouseleave', function() {
+				const card = document.getElementById('achievementCard');
+				card.style.display = 'none';
+			});
+		});
+		async function fetchLeetCodeStats() {
+			const response = await fetch('https://leetcode-stats-api.herokuapp.com/raaganuthayaargn');
+			const data = await response.json();
+			document.getElementById('leetcode-stats').innerHTML = `
+				<p>Total Problems Solved: ${data.totalSolved}/${data.totalQuestions}</p>
+				<p>Easy: ${data.easySolved}/${data.totalEasy}</p>
+				<p>Medium: ${data.mediumSolved}/${data.totalMedium}</p>
+				<p>Hard: ${data.hardSolved}/${data.totalHard}</p>
+			`;
+    	}	
 
+   		 fetchLeetCodeStats();
 	</script>
 </html>
 
