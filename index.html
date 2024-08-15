@@ -28,10 +28,11 @@
 			</div>
 		</div>		
 		<div class="page" id="projects">
-			<h1>SKILLS AND PROJECTS</h1>
-    <		<div class="cards-container">
-        		<div class="card">
-            		<h2>Skills</h2>
+			<div class="slider-container">
+				<div class="arrow left" onclick="prevSlide()">&#10094;</div>
+				<div class="slide" id="slide1">
+					<div class="slider-card">
+					<h2>Skills</h2>
             		<p>
 						Backend Development<br>
 						Full Stack Development (MERN)<br>
@@ -42,22 +43,28 @@
 						Linux (Basic Bash Scripting)<br>
 						Basic AWS<br>
 					</p>
-        		</div>
-        		<div class="card">
-            		<h2>Projects</h2>
+				</div>
+				</div>
+				<div class="slide" id="slide2">
+					<div class="slider-card">
+					<h2>Projects</h2>
             		<p>
 						Overall Fitness Journal - MERN Stack APP with JWT Auth, and Context.<br>
 						Fund Trail Analysis Tool - Blockchain based DataBase and ML Algorithms for analyzing trends.<br>
 						Reverse Budget Tracker
 					</p>
-        		</div>
-				<div class="leetcode-card">
+				</div>
+				</div>
+				<div class="slide" id="slide3">
+					<div class="slider-card">
 					<div id="leetcode-profile">
 						<h2>LeetCode Profile</h2>
 						<div id="leetcode-stats"></div>
 					</div>
 				</div>
-    		</div>
+				</div>
+				<div class="arrow right" onclick="nextSlide()">&#10095;</div>
+			</div>
 		</div>
 		<div class="page contact-section" id="contact">
 			<span class="slide-title">About Me</span><br>
@@ -76,38 +83,37 @@
 				<!-- Main Content -->
 				<div class="main-content">
 					<!-- Infobox -->
-					<div class="infobox">
-						<h2>Raagan U</h2>
-						<img src="image.jpeg" alt="Error">
-						<p><strong>Born:</strong> April 1st, 2003<br>Erode, Tamil Nadu</p>
-						<p><strong>Occupation:</strong> Engineering Student, Backend Developer</p>
-						<p><strong>Education:</strong> Jain University</p>
-						<p><strong>Website:</strong> <a href="raagan-u.github.io">raagan-u.github.io</a></p>
-						<p><strong>E-mail:</strong> <a href="mailto:raaganuthayaargn@gmail.com">raaganuthayaargn@gmail.com</a></p>
-						<p><strong>Phone:</strong> +91-97891-49183</p>
-						<p><strong>Linkedin:</strong> <a href="https://www.linkedin.com/in/raagan-u-01a170203/">https://www.linkedin.com	/in/raagan-u-01a170203/</a></p>
-					</div>
-	
 					<!-- Sections -->
 					<div id="intro">
 						<h2>Introduction</h2>
-						<p>I'm a Computer Science Engineering student at Jain University with a focus on <b>backend development</b>. My core competencies lie in web development and cloud technologies, and I'm eager to delve deeper into the cloud development domain. I'm driven by a passion for creating functional and efficient systems. With a strong foundation in problem-solving and a collaborative spirit, I'm excited to contribute to innovative projects.</p>
+						<p align="justify">I'm a Computer Science Engineering student at Jain University with a focus on <b>backend development</b>. My core competencies lie in web development and cloud technologies, and I'm eager to delve deeper into the cloud development domain. I'm driven by a passion for creating functional and efficient systems. With a strong foundation in problem-solving and a collaborative spirit, I'm excited to contribute to innovative projects.</p>
 					</div>
 	
 					<div id="early-life">
 						<h2>Early Life</h2>
-						<p>I was born and brought up in Erode, Tamil Nadu where I did my schooling at Bharathi Vidya Bhavan. I got into Jain University in Bangalore for my UG BTech Course.</p>
+						<p align="justify">I was born and brought up in Erode, Tamil Nadu where I did my schooling at Bharathi Vidya Bhavan. I got into Jain University in Bangalore for my UG BTech Course.</p>
 					</div>
 	
 					<div id="education">
 						<h2>Education</h2>
-						<p>During My School days, I was amongst the top 10 scorers in examinations. I was also two times the School Pupil Leader. I was also actively participating in various technical and non-technical competitions and bagged many prizes.</p>
+						<p align="justify">During My School days, I was amongst the top 10 scorers in examinations. I was also two times the School Pupil Leader. I was also actively participating in various technical and non-technical competitions and bagged many prizes.</p>
 					</div>
 	
 					<div id="personal-life">
 						<h2>Personal Life</h2>
-						<p>I have a lot of passion towards computers and I have been working on computer since I was 8 years old. I sing, draw and also write speeches and orate. I was overweight during my school days, and once when I got into College I got myself into Weight Training and Cardiovascular Exercises. I have lost <b>Twenty Kilos</b> and I still have a lot to go.</p>
+						<p align="justify">I have a lot of passion towards computers and I have been working on computer since I was 8 years old. I sing, draw and also write speeches and orate. I was overweight during my school days, and once when I got into College I got myself into Weight Training and Cardiovascular Exercises. I have lost <b>Twenty Kilos</b> and I still have a lot to go.</p>
 					</div>
+				</div>
+				<div class="infobox">
+					<h2>Raagan U</h2>
+					<img src="image.jpeg" alt="Error">
+					<p><strong>Born:</strong> April 1st, 2003<br>Erode, Tamil Nadu</p>
+					<p><strong>Occupation:</strong> Engineering Student, Backend Developer</p>
+					<p><strong>Education:</strong> Jain University</p>
+					<p><strong>Website:</strong> <a href="raagan-u.github.io">raagan-u.github.io</a></p>
+					<p><strong>E-mail:</strong> <a href="mailto:raaganuthayaargn@gmail.com">raaganuthayaargn@gmail.com</a></p>
+					<p><strong>Phone:</strong> +91-97891-49183</p>
+					<p><strong>Linkedin:</strong> <a href="https://www.linkedin.com/in/raagan-u-01a170203/">https://www.linkedin.com	/in/raagan-u-01a170203/</a></p>
 				</div>
 			</div>
 		  </div>		  
@@ -216,6 +222,31 @@
     	}	
 
    		 fetchLeetCodeStats();
+			let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) {
+            slide.classList.add('active');
+        }
+    });
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+}
+
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+}
+
+// Show the first slide initially
+showSlide(currentSlide);
+
 	</script>
 </html>
 
