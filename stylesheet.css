@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Vujahday+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Cinzel:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 .page {
 	display: none;
@@ -20,20 +23,22 @@
 }	
 
 .slide-title {
-	font-size: 75px;
-	font-weight: bold;
+	font-size: 50px;
+	font-style: normal;
+  font-family: 'Bebas Neue', sans-serif;
 }
 .name-title {
-	font-size: 200px;
+	font-size: 175px;
 	font-weight: 400;
 	font-style: normal;
-	font-weight: bold;
+  font-family: "Cinzel", serif;
 }
 
 .caption {
 	font-size: 60px;
-	font-weight: 400;
+	font-weight: 200;
 	font-style: normal;
+  font-family: 'Vujahday Script';
 }
 
 .dock {
@@ -307,7 +312,7 @@ h1 {
 
 .achievement-slide:hover {
     transform: scale(1.1);
-    background-color: #DAA520; /* Gold on hover */
+    background-color: rgb(92, 92, 227);
 }
 
 /* Achievement Card */
@@ -327,10 +332,11 @@ h1 {
 }
 
 .achievement-card .card-title {
+    font-family: "Montserrat", sans-serif;
     font-size: 1.8em;
     margin: 0 0 10px;
     color: #333;
-    border-bottom: 2px solid #DAA520;
+    border-bottom: 2px solid rgb(92, 92, 227);
     padding-bottom: 5px;
 }
 
@@ -393,7 +399,7 @@ h1 {
   width: 45%;
   padding: 20px;
   border-radius: 10px;
-  border: 10px solid black;
+  border: 1px solid black;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   min-height: 300px;
 }
