@@ -23,6 +23,7 @@
 }	
 
 .slide-title {
+  color: black;
 	font-size: 50px;
 	font-style: normal;
   font-family: 'Bebas Neue', sans-serif;
@@ -322,7 +323,8 @@ h1 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 300px;
+    width: 700px;
+    height: 300px;
     padding: 20px;
     background-color: #fff;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
@@ -342,6 +344,8 @@ h1 {
 
 .achievement-card .card-details {
     color: #666;
+    font-weight: bold;
+    font-size: 25px;
     line-height: 1.6;
 }
 
@@ -386,7 +390,7 @@ h1 {
 .leetcode-badge img, .leetcode-stats img {
   margin-top: 10px;
   width: auto;
-  height: 50px; /* Adjust height as needed */
+  height: 50px;
 }
 
 .leetcode-stats p {
@@ -402,7 +406,12 @@ h1 {
   border: 1px solid black;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   min-height: 300px;
+  color: #666;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 1.6;
 }
+
 .slide {
   display: none;
   width: 100%;
