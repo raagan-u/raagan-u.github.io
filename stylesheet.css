@@ -450,3 +450,7 @@ h1 {
 .arrow.right {
   right: 10px;
 }
+
+.image-box {
+  border: 1px solid #333;
+}
