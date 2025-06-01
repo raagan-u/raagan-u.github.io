@@ -26,7 +26,7 @@
 				<h2 class="card-title"></h2>
 				<p class="card-details"></p>
 			</div>
-		</div>		
+		</div>
 		<div class="page" id="projects">
 			<div class="slider-container">
 				<div class="arrow left" onclick="prevSlide()">&#10094;</div>
@@ -36,7 +36,8 @@
             		<p>
 						<ul style="text-align: left;">
 							<li>Backend Development</li>
-							<li>Full Stack Development (MERN)</li>
+							<li>Golang</li>
+							<li>Rust</li>
 							<li>C/C++</li>
 							<li>Python</li>
 							<li>Database ( SQL, Mongo, Postgres )</li>
@@ -51,11 +52,9 @@
 					<span class="slide-title">Projects</span>
             		<p>
 						<ul style="text-align: left;">
-							<li>Currently Working: CNN Based Classifier with DEHO Algorihtm for detecting DDoS Attack.</li>
+							<li><b>Current Project: wallet-rs</b> a crypto wallet written in rust.</li>
 							<li>Overall Fitness Journal - MERN Stack APP with JWT Auth, and Context.</li>
 							<li>Fund Trail Analysis Tool - Blockchain based DataBase and ML Algorithms for analyzing trends.</li>
-							<li>Reverse Budget Tracker</li>
-							<li>IOT BOTNET DETECTION</li>
 						</ul>
 					</p>
 				</div>
@@ -85,7 +84,7 @@
 						<li>Personal Life</li>
 					</ul>
 				</div>
-	
+
 				<!-- Main Content -->
 				<div class="main-content">
 					<!-- Infobox -->
@@ -94,17 +93,17 @@
 						<h2>Introduction</h2>
 						<p align="justify">I'm a Computer Science Engineering student at Jain University with a focus on <b>backend development</b>. My core competencies lie in web development and cloud technologies, and I'm eager to delve deeper into the cloud development domain. I'm driven by a passion for creating functional and efficient systems. With a strong foundation in problem-solving and a collaborative spirit, I'm excited to contribute to innovative projects.</p>
 					</div>
-	
+
 					<div id="early-life">
 						<h2>Early Life</h2>
 						<p align="justify">I was born and brought up in Erode, Tamil Nadu where I did my schooling at Bharathi Vidya Bhavan. I got into Jain University in Bangalore for my UG BTech Course.</p>
 					</div>
-	
+
 					<div id="education">
 						<h2>Education</h2>
 						<p align="justify">During My School days, I was amongst the top 10 scorers in examinations. I was also two times the School Pupil Leader. I was also actively participating in various technical and non-technical competitions and bagged many prizes.</p>
 					</div>
-	
+
 					<div id="personal-life">
 						<h2>Personal Life</h2>
 						<p align="justify">I have a lot of passion towards computers and I have been working on computer since I was 8 years old. I sing, draw and also write speeches and orate. I was overweight during my school days, and once when I got into College I got myself into Weight Training and Cardiovascular Exercises. I have lost <b>Twenty Kilos</b> and I still have a lot to go.</p>
@@ -122,7 +121,7 @@
 					<p><strong>Linkedin:</strong> <a href="https://www.linkedin.com/in/raagan-u-01a170203/">https://www.linkedin.com	/in/raagan-u-01a170203/</a></p>
 				</div>
 			</div>
-		  </div>		  
+		  </div>
 		<div class="dock">
 			<div class="dock-container">
 			  <li class="li-2">
@@ -202,7 +201,7 @@
 				const card = document.getElementById('achievementCard');
 				const title = this.getAttribute('data-title');
 				const details = this.getAttribute('data-details');
-				
+
 
 				card.querySelector('.card-title').textContent = title;
 				card.querySelector('.card-details').textContent = details;
@@ -225,7 +224,7 @@
 				<p>Medium: ${data.mediumSolved}/${data.totalMedium}</p>
 				<p>Hard: ${data.hardSolved}/${data.totalHard}</p>
 			`;
-    	}	
+    	}
 
    		 fetchLeetCodeStats();
 			let currentSlide = 0;
@@ -255,4 +254,3 @@ showSlide(currentSlide);
 
 	</script>
 </html>
-
